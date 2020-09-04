@@ -1,0 +1,58 @@
+body {
+    background: linear-gradient(-45deg, #658ccb, #e0d5d5, #d46c00, #a03223);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    text-align: center !important;
+}
+
+
+.h2 {
+    font-size: 3em !important;
+}
+
+.form-group {
+    margin-bottom: 43px;
+}
+
+.label {
+    font-size: 26px;
+}
+.bg-dark1 {
+    background-color: #42618a !important;
+}
+
+.card-custom {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #ffe8a1;
+  background-clip: border-box;
+  border: none;
+  border-radius: 0.25rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}

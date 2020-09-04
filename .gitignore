@@ -80,7 +80,7 @@ celerybeat-schedule
 
 # SageMath parsed files
 *.sage.py
-static/
+static/images/
 # Environments
 .env
 .venv
