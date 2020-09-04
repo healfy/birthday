@@ -5,9 +5,9 @@ from django.contrib.auth import login
 from .forms import PostForm, Post
 
 
-class IndexView(LoginRequiredMixin, TemplateView):
+class IndexView(TemplateView):
     template_name = 'index.html'
-    login_url = 'login/'
+    # login_url = 'login/'
 
 
 class LoginFormView(FormView):
