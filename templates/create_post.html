@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <br>
+    <div class="container">
+        <h2 class="h2">Оставить поздравление:</h2>
+    </div>
+    <br>
+     <div class="container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1" class="label">Автор поздравления</label>
+            <input type="text"
+                   class="form-control form-control-lg shadow p-3 mb-4 bg-white rounded"
+                   id="exampleInputEmail1" name="author"
+                   aria-describedby="emailHelp">
+                <small id="textHelp" class="form-text text-muted" style="margin-top: -10px;">Желательно не
+                только имя(можно даже кличку)</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="label">Здесь пишите свое
+                поздравление</label>
+            <textarea
+                    class="form-control form-control-lg shadow p-3 mb-3 bg-white rounded"
+                    name="message" id="exampleFormControlTextarea1"
+                    rows="3"></textarea>
+            <small id="emailHelp" class="form-text text-muted">Было бы здорово
+                добавить к пожеланиям забавную историю связанную с
+                именниницей</small>
+        </div>
+        <div class="form-group">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input "
+                       id="inputGroupFile04" name="photo"
+                       aria-describedby="inputGroupFileAddon04">
+                <label class="custom-file-label" for="inputGroupFile04">Тыкните
+                    чтобы загрузить картинку</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-dark">Сохранить</button>
+    </form>
+     </div>
+
+{% endblock %}

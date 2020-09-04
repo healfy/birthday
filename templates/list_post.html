@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-lg">
+        <div class="card-columns">
+    {% for post in object_list %}
+        <div class="card card-custom shadow-lg p-4" >
+          <img src="{{ post.photo.url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4 class="card-title">Приятнейшее поздравление от {{ post.author }} </h4>
+            <a href="{{ post.get_absolute_url }}" class="btn btn-primary" style="margin-top: 10px">подробнее</a>
+          </div>
+        </div>
+    {% endfor %}
+    </div>
+
+    </div>
+
+
+{% endblock %}
+{% block extra_scripts %}
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no user-scalable=no, maximum-scale=1">
+
+    <!-- Materialize -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap&subset=cyrillic" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+{% block headers %}
+{% endblock %}
+
+<main>
+    {% block content %}
+    <div class="container" style="margin-top: 30px">
+        <form enctype="multipart/form-data" class="col s12" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="input-field col s8">
+                    <i class="material-icons prefix">account_circle</i>
+                    {{ form.username|add_class:"autocomplete" }}
+                    {{ form.username.label_tag }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s8">
+                    <i class="material-icons prefix">https</i>
+                    {{ form.password }}
+                    {{ form.password.label_tag }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="fieldWrapper">
+                    {{ form.errors }}
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit"
+                        class="waves-effect waves-light btn center" style="left: 370px;">
+                    <i class="material-icons right">cloud</i>
+                    Вход
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+</main>
+{% block footer %}
+{% endblock %}
+<!-- Optional JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+{% block extra_scripts %}
+{% endblock %}
+</body>
+</html>
