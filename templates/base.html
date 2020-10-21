@@ -7,6 +7,7 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no user-scalable=no, maximum-scale=1">
 
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap&subset=cyrillic" rel="stylesheet">
     {% block title %}
         <title>Татьяна Аскерко</title>
@@ -18,17 +19,19 @@
 </head>
 <body>
 {% block headers %}
-
-    <nav class="navbar navbar-expand-sm bg-dark bg-dark1 navbar-dark">
+    <div class="header-bgd">
+        <img src="{% static 'files/header.svg' %}" alt="header">
+    </div>
+    <nav class="navbar navbar-expand-sm navbar-dark">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="/">Главная</a>
+          <a class="nav-link-custom" href="/">Главная</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/post/create">Поздравить</a>
+          <a class="nav-link-custom" href="/post/create">Поздравить</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/post/list">Все поздравления</a>
+          <a class="nav-link-custom" href="/post/list">Все поздравления</a>
         </li>
       </ul>
     </nav>

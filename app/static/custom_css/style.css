@@ -1,47 +1,130 @@
 body {
-    background: linear-gradient(-45deg, #658ccb, #e0d5d5, #d46c00, #a03223);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    background: #f5f5f5;
     text-align: center !important;
 }
 
+a {
+    text-decoration: none;
+    transition: .2s;
+}
+
+.header-bgd {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.nav-link-custom {
+    color: #222a2f;
+    font-size: 22px;
+    font-weight: 400;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    user-select: none;
+    font-family: 'Poiret One', cursive;
+    transition: .2s;
+}
+
+.nav-link-custom:hover {
+    text-decoration: none;
+    color: #75b2ad;
+    border-color: #75b2ad;
+}
+
+.nav-item {
+    margin: 10px 15px;
+}
+
+.navbar {
+    justify-content: flex-end;
+    padding: 15px;
+    margin: 60px 0 15px 0;
+}
+
+.title-description {
+    font-weight: 200;
+    font-size: 14px;
+}
+
+.congratulator {
+    font-family: grad, serif;
+    font-style: italic;
+    font-size: 25px;
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+    content: 'Выбрать файл';
+}
 
 .h2 {
     font-size: 3em !important;
 }
 
 .form-group {
-    margin-bottom: 43px;
+    margin-bottom: 20px;
 }
 
 .label {
     font-size: 26px;
 }
-.bg-dark1 {
-    background-color: #42618a !important;
+
+.perfect-btn {
+    position: absolute;
+    display: block;
+    left: 20%;
+    bottom: -30px;
+    right: 20%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    background: #75b2ad;
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.35);
+    font-family: grad, serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.perfect-btn:hover {
+    color: white;
+}
+
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card-custom {
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #ffe8a1;
-  background-clip: border-box;
-  border: none;
-  border-radius: 0.25rem;
-  margin-top: 50px;
-  margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 45%;
+    min-width: 300px;
+    height: 400px;
+    margin: 0 10px 100px 10px !important;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 80%;
+    height: 60%;
+    object-fit: cover;
+    object-position: top;
 }
 
 .card-body {
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  min-height: 1px;
-  padding: 1.25rem;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
 }
 
 
@@ -55,4 +138,26 @@ body {
     100% {
         background-position: 0 50%;
     }
+}
+
+.preview-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.preview-item {
+    margin: 10px;
+    border: 2px solid #75b2ad;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.preview-item > img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: top;
 }
