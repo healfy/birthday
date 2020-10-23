@@ -26,10 +26,6 @@ urlpatterns = [
     path('post/<int:pk>/', v.SinglePost.as_view(), name='post_detail'),
     path('post/list/', v.PostListView.as_view(), name='list'),
     path('login/', v.LoginFormView.as_view()),
-    path('step1/', v.Step1View.as_view()),
-    path('step2/', v.Step2View.as_view()),
-    path('step3/', v.Step3View.as_view()),
-    path('step4/', v.Step4View.as_view()),
 ]
 
 

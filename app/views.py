@@ -1,13 +1,25 @@
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView
+from django.views.generic import (
+    TemplateView,
+    FormView,
+    CreateView,
+    ListView,
+    DetailView
+)
 from django.contrib.auth import login
 from .forms import PostForm, Post
+from .models import Photo
 
 
 class IndexView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'bla.html'
     # login_url = 'login/'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(IndexView, self).get_context_data(**kwargs)
+        ctx['photos'] = Photo.objects.all()
+        return ctx
 
 
 class LoginFormView(FormView):
@@ -35,22 +47,6 @@ class PostCreateView(CreateView):
 class PostListView(ListView):
     template_name = 'list_post.html'
     model = Post
-
-
-class Step1View(TemplateView):
-    template_name = 'step1.html'
-
-
-class Step2View(TemplateView):
-    template_name = 'step2.html'
-
-
-class Step3View(TemplateView):
-    template_name = 'step3.html'
-
-
-class Step4View(TemplateView):
-    template_name = 'step4.html'
 
 
 class SinglePost(DetailView):
