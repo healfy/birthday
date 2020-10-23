@@ -178,11 +178,15 @@ a {
     object-position: top;
 }
 
+.images-wrapper {
+    padding: 50px;
+}
+
 
 .my-gallery {
-    width: 100%;
-    float: left;
-    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .my-gallery img {
@@ -195,17 +199,13 @@ a {
 .img1 {
     border-top-width: 80px;
     border-left-width: 8px;
-    margin-left: 7px;
-    margin-top: 7px;
-    margin-right: 7px;
-    margin-bottom: 7px;
+    margin: 7px;
 }
 
 .my-gallery figure {
     display: block;
-    float: left;
-    margin: 0 5px 5px 0;
-    width: 150px;
+    margin: 5px;
+    flex-basis: 15%;
 }
 
 .my-gallery figcaption {
