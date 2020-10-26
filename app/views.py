@@ -9,16 +9,19 @@ from django.views.generic import (
 )
 from django.contrib.auth import login
 from .forms import PostForm, Post
-from .models import Photo
+from .photos import PhotoFactory
 
 
-class IndexView(TemplateView):
+class BaseView(LoginRequiredMixin):
+    login_url = 'login/'
+
+
+class IndexView(BaseView, TemplateView):
     template_name = 'bla.html'
-    # login_url = 'login/'
 
     def get_context_data(self, **kwargs):
         ctx = super(IndexView, self).get_context_data(**kwargs)
-        ctx['photos'] = Photo.objects.all()
+        ctx['photos'] = PhotoFactory.get_all()
         return ctx
 
 
@@ -33,7 +36,7 @@ class LoginFormView(FormView):
         return super(LoginFormView, self).form_valid(form)
 
 
-class PostCreateView(CreateView):
+class PostCreateView(BaseView, CreateView):
     form_class = PostForm
     template_name = 'create_post.html'
     success_url = '/post/list'
@@ -44,12 +47,12 @@ class PostCreateView(CreateView):
         return super().form_invalid(form)
 
 
-class PostListView(ListView):
+class PostListView(BaseView, ListView):
     template_name = 'list_post.html'
     model = Post
 
 
-class SinglePost(DetailView):
+class SinglePost(BaseView, DetailView):
     template_name = 'single_post.html'
     model = Post
     queryset = Post.objects.all()

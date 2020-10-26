@@ -124,3 +124,64 @@ MEDIA_ROOT = os.path.join(STATIC_ROOT, 'images')
 
 WIDTH = 1920
 HEIGHT = 1080
+
+
+LOGFILE = os.path.join(os.environ.get('LOGFILE', ''), 'app.log')
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        }
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'filters': ['require_debug_false'],
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': 'DEBUG',
+            'formatter': 'simple'
+        },
+        'file_handler': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'level': 'ERROR',
+            'filename': LOGFILE,
+            'formatter': 'verbose',
+            'maxBytes': 1024 * 1024 * 5,
+            'backupCount': 5,
+        }
+    },
+    'loggers': {
+        'django.db.backends': {
+            'level': 'ERROR',
+            'handlers': ['console', 'file_handler'],
+        },
+        'django.request': {
+            'handlers': ['file_handler', 'console'],
+            'level': 'ERROR',
+        },
+        'app': {
+            'handlers': ['console', 'file_handler'],
+            'level': 'DEBUG',
+        },
+    }
+}
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    print('no local settings file')

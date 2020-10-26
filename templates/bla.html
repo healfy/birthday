@@ -24,11 +24,10 @@
         <div class="my-gallery" itemscope  itemtype="http://schema.org/ImageGallery">
             {% for photo in photos %}
                             <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                <a href="{{photo.photo.url}}"
+                <a href="{{ photo.url }}"
                    itemprop="contentUrl" data-size="{{ photo.size }}">
-                    <img class="img1" src="{{photo.photo.url}}" itemprop="thumbnail" alt="Image description"/>
+                    <img class="img1" src="{{ photo.url }}" itemprop="thumbnail" alt="Image description"/>
                 </a>
-                <figcaption itemprop="caption description">{{ photo.message }} </figcaption>
             </figure>
             {% endfor %}
 
