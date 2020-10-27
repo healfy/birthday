@@ -1,4 +1,5 @@
 import os
+import random
 from PIL import Image
 from django.conf import settings
 
@@ -21,6 +22,7 @@ class PhotoFactory:
             with Image.open(os.path.join(path, f)) as img:
                 width, height = img.size
                 photos.append(cls(width, height, f'/static/files/tanya/{f}'))
+        random.shuffle(photos)
         return photos
 
     def __init__(self, width, height, url):
