@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '=$6#bju**jx85l@x_-&zucu4z6s=-6nb&hp^xi_*2@#(c0qimj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['tanyathirtyyearscelebration.ru']
 
 
 # Application definition
